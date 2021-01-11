@@ -83,3 +83,7 @@
 - Fenwick tree
 - Segment tree
 
+## Classic or interesting Problems
+- Skyline 
+- Rat in a maze
+- 
