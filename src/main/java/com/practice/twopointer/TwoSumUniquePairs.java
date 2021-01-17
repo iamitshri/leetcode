@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.twopointer;
 
 import java.util.Arrays;
 import java.util.HashMap;
