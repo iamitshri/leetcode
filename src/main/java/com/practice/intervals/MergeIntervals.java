@@ -1,4 +1,4 @@
-package com.practice.mergeintervals;
+package com.practice.intervals;
 
 import java.util.Arrays;
 import java.util.LinkedList;
