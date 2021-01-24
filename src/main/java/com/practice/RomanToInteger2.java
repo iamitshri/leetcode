@@ -1,6 +1,6 @@
 package com.practice;
 
-public class RomanToInteger {
+public class RomanToInteger2 {
 
 	public static int romanToInt(String s) {
 		if (s == null || s.length() == 0) {

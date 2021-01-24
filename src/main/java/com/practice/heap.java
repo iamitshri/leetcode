@@ -10,7 +10,8 @@ package com.practice;
 // Note: 	The heap class takes an array as an input parameter.
 // to run this program: > Call the class from another program.
 //			  Example:  heap a = new heap(array);
-import java.io.*; //for I/O
+
+import java.io.IOException;
 ///////////////////////////////////////////////////////////////////////////
 
 public class heap {

@@ -1,6 +1,7 @@
 package com.practice;
 
-import java.util.*;
+import java.util.List;
+import java.util.PriorityQueue;
 
 class Meeting {
 

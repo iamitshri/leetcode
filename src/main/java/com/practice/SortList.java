@@ -1,5 +1,7 @@
 package com.practice;
 
+import com.practice.linkedlist.ListNode;
+
 /**
  * 
  */

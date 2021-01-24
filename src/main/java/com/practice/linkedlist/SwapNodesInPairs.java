@@ -1,6 +1,5 @@
 package com.practice.linkedlist;
 
-import ListNode;
 
 public class SwapNodesInPairs {
 

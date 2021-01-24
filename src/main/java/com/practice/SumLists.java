@@ -1,5 +1,6 @@
 package com.practice;
 
+import com.practice.linkedlist.ListNode;
 import java.util.LinkedList;
 
 public class SumLists {

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
-public class ThreeSum {
+public class ThreeSum2 {
 
 	/**
 	 * Given an array S of n integers, are there elements a, b, c in S such that

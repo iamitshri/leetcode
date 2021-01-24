@@ -1,6 +1,5 @@
 package com.practice.linkedlist;
 
-import ListNode;
 import java.util.HashSet;
 
 public class IntersectionTwoLinkedList {

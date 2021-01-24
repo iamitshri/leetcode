@@ -1,6 +1,6 @@
 package com.practice;
 
-public class ReverseBits {
+public class ReverseBits2 {
 
 	static int reverseBits(int n) {
 		int result = 0;

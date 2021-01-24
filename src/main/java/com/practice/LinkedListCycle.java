@@ -1,16 +1,10 @@
 package com.practice;
 
+import com.practice.linkedlist.ListNode;
+
 public class LinkedListCycle {
 
-	class ListNode {
-		int val;
-		ListNode next;
 
-		ListNode(int x) {
-			val = x;
-			next = null;
-		}
-	}
 
 	public boolean hasCycle(ListNode head) {
 

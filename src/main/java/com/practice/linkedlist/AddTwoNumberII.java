@@ -1,6 +1,5 @@
 package com.practice.linkedlist;
 
-import ListNode;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
