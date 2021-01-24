@@ -1,7 +1,5 @@
-package linkedlist;
+package com.practice.linkedlist;
 
-
-import com.practice.linkedlist.ListNode;
 
 public class ReverseNodeGroupOfK {
 
