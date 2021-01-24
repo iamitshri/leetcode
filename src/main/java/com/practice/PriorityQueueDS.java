@@ -1,7 +1,5 @@
 package com.practice;
 
-import java.util.Iterator;
-
 public class PriorityQueueDS {
 
 	/**

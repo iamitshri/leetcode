@@ -1,8 +1,5 @@
 package com.practice;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class BinaryTreeMaximumPathSum {
 	/**
 	 * Given a binary tree, find the maximum path sum.

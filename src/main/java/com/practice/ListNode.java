@@ -1,14 +1,14 @@
-package com.practice;
+package com.practice.linkedlist;
 
 /**
  * Definition for singly-linked list.
  */
 
-public class ListNode {
+class ListNode2 {
 	public int val;
 	public ListNode next;
 
-	ListNode(int x) {
+	ListNode2(int x) {
 		val = x;
 		next = null;
 	}

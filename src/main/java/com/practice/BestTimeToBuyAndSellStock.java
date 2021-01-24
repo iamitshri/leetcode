@@ -1,7 +1,5 @@
 package com.practice;
 
-import java.util.Stack;
-
 public class BestTimeToBuyAndSellStock {
 	public static int maxProfit(int[] prices) {
 
