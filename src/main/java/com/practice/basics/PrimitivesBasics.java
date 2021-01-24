@@ -1,5 +1,7 @@
 package com.practice.basics;
 
+import java.util.Arrays;
+
 public class PrimitivesBasics {
 
     public static void main(String[] args) {
@@ -59,6 +61,10 @@ public class PrimitivesBasics {
         // Get last set bit
         int lastSetBit=4;
         System.out.println(Integer.toBinaryString(lastSetBit)+" Last Set bit:"+Integer.toBinaryString(lastSetBit & (lastSetBit-1)));
+        int [] myArray = {1,2,3,4};
+       for(int i :  Arrays.copyOfRange(myArray, 2, myArray.length)){
+           System.out.println(i);
+       }
      }
 
 
