@@ -32,7 +32,7 @@ public class FindLeavesBinaryTree {
         int level = Math.max(height(node.left), height(node.right)) + 1;
 
         if (list.size() < level + 1) {
-            list.add(new ArrayList<Integer>());
+            list.add(new ArrayList<>());
         }
 
         list.get(level)

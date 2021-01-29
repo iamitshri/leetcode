@@ -22,4 +22,19 @@ public class GCD {
         return a;
     }
 
+    public static int gcd3(int num1, int num2) {
+
+        // Base case
+        if (num1 == num2) {
+            return num1;
+        }
+        // Recursive case
+        if (num1 > num2) {
+            return gcd3(num1-num2, num2);
+        }
+        else {
+            return gcd3(num1, num2-num1);
+        }
+    }
+
 }

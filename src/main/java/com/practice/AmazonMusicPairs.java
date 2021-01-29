@@ -15,6 +15,7 @@ public class AmazonMusicPairs {
 
       /*
       (a+b)%60=60
+      a%60=60-b%60;
       a%60 = (60-b%60)%60;
       */
         for (int i = 0; i < time.length; i++) {

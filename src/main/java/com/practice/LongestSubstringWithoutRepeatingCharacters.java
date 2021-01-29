@@ -1,6 +1,8 @@
 package com.practice;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 public class LongestSubstringWithoutRepeatingCharacters {
 	/*
@@ -32,6 +34,24 @@ public class LongestSubstringWithoutRepeatingCharacters {
 		return max;
 	}
 
+	public int lengthOfLongestSubstring2(String s) {
+
+		int start=0;
+		int maxLen=0;
+		Set<Character> set = new HashSet<>();
+		// aab
+		for(int end=0; end < s.length();end++){
+			char curr = s.charAt(end);
+			// how do we know if we have seen the character before
+			//remove from start until no more duplicate
+			while(!set.add(curr)){
+				set.remove(s.charAt(start++));
+			}
+			maxLen = Math.max(maxLen,end-start+1);
+			// if the new character is seen, remove it until there is no duplicate in the current window
+		}
+		return maxLen;
+	}
 	public static void main(String[] args) {
 		// abcdeafgabcbb
 		System.out.println(lengthOfLongestSubstring("paadfdspwwkew"));

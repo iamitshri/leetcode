@@ -27,4 +27,23 @@ public class MiddleNode {
         // 1 2
         return slow;
     }
+
+    public ListNode middleNode2(ListNode head) {
+
+        if(head==null)
+            return null;
+
+        ListNode fp=head;
+        ListNode sp=head;
+        // 1 2
+        // 1 2 3
+        while(fp!=null && fp.next!=null){
+            sp = sp.next;
+            fp=fp.next.next;
+        }
+
+
+        return sp;
+
+    }
 }
