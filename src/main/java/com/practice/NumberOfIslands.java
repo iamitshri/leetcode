@@ -4,6 +4,38 @@ import java.util.LinkedList;
 
 public class NumberOfIslands {
 
+    public int numIslandsDfs(char[][] grid) {
+        if (grid == null || grid.length == 0) {
+            return 0;
+        }
+        int cnt = 0;
+        int m = grid.length;
+        int n = grid[0].length;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (grid[i][j] == '1') {
+                    dfs(grid, i, j);
+                    cnt++;
+                }
+            }
+        }
+        return cnt;
+    }
+
+    void dfs(char[][] grid, int x2, int y2) {
+        if (x2 < 0 || x2 >= grid.length || y2 < 0 || y2 >= grid[0].length || grid[x2][y2] == '0') {
+            return;
+        }
+
+        grid[x2][y2] = '0';
+        dfs(grid, x2 + 1, y2);
+        dfs(grid, x2 - 1, y2);
+        dfs(grid, x2, y2 + 1);
+        dfs(grid, x2, y2 - 1);
+
+
+    }
+
     /**
      * https://leetcode.com/problems/number-of-islands/discuss/56354/1D-Union-Find-Java-solution-easily-generalized-to-other-problems
      * https://leetcode.com/problems/number-of-islands/discuss/722374/Using-union-find

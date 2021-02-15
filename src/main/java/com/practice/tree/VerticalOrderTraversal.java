@@ -100,7 +100,7 @@ public class VerticalOrderTraversal {
 
     void helper(Map<Integer, List<LevelVal>> map, TreeNode node, int colNum, int level) {
         if (node == null) return;
-        map.putIfAbsent(colNum, new ArrayList<LevelVal>());
+        map.putIfAbsent(colNum, new ArrayList<>());
         map.get(colNum).add(new LevelVal(level, node.val));
         helper(map, node.left, colNum - 1, level + 1);
         helper(map, node.right, colNum + 1, level + 1);
