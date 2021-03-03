@@ -29,7 +29,6 @@ public class VerticalOrderTraversal {
         while (!queue.isEmpty()) {
 
             Object[] obj = queue.remove();
-
             TreeNode node = (TreeNode) obj[0];
             int distance = (int) obj[1];
             int level = (int) obj[2];
@@ -93,22 +92,28 @@ public class VerticalOrderTraversal {
         for (Map.Entry<Integer, List<LevelVal>> entry : map.entrySet()) {
             List<LevelVal> list = entry.getValue();
             Collections.sort(list);
-            res.add(list.stream().map(lv -> lv.val).collect(Collectors.toList()));
+            res.add(list.stream()
+                        .map(lv -> lv.val)
+                        .collect(Collectors.toList()));
         }
         return res;
     }
 
     void helper(Map<Integer, List<LevelVal>> map, TreeNode node, int colNum, int level) {
-        if (node == null) return;
+        if (node == null) {
+            return;
+        }
         map.putIfAbsent(colNum, new ArrayList<>());
-        map.get(colNum).add(new LevelVal(level, node.val));
+        map.get(colNum)
+           .add(new LevelVal(level, node.val));
         helper(map, node.left, colNum - 1, level + 1);
         helper(map, node.right, colNum + 1, level + 1);
     }
 }
 
 
-class LevelVal implements Comparable<LevelVal>{
+class LevelVal implements Comparable<LevelVal> {
+
     int val;
     int level;
 
@@ -120,7 +125,9 @@ class LevelVal implements Comparable<LevelVal>{
     @Override
     public int compareTo(LevelVal other) {
         int ret = this.level - other.level;
-        if (ret != 0) return ret;
+        if (ret != 0) {
+            return ret;
+        }
         return this.val < other.val ? -1 : 1;
     }
 }

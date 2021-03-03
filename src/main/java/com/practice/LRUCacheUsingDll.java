@@ -45,7 +45,6 @@ public class LRUCacheUsingDll {
     }
 
     void remove(Node node) {
-
         node.prev.next = node.next;
         node.next.prev = node.prev;
     }

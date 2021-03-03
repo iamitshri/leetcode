@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class WordLadderTwoWayBFS {
+public class WordLadderIITwoWayBFS {
 
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
 

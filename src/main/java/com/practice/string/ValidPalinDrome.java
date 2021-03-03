@@ -19,7 +19,7 @@ public class ValidPalinDrome {
             while (l < h && !Character.isLetterOrDigit(s.charAt(h))) {
                 h--;
             }
-            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(j))) {
+            if (Character.toLowerCase(s.charAt(l)) != Character.toLowerCase(s.charAt(h))) {
                 return false;
             }
             l++;
