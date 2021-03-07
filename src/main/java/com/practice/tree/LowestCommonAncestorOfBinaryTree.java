@@ -2,6 +2,43 @@ package com.practice.tree;
 
 public class LowestCommonAncestorOfBinaryTree {
 
+    /**
+     * https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/submissions/
+     * Runtime: 4 ms, faster than 100.00% of Java online submissions for Lowest Common Ancestor of a Binary Tree.
+     *
+     * @param root
+     * @param p
+     * @param q
+     * @return
+     */
+    TreeNode lca(TreeNode root, TreeNode p, TreeNode q) {
+
+        if (root == null) {
+            return root;
+        }
+
+        if (root == p || root == q) {
+            return root;
+        }
+
+        TreeNode left = lca(root.left, p, q);
+        TreeNode right = lca(root.right, p, q);
+
+        if ((left == p || left == q) && (right == p || right == q)) {
+            return root;
+        }
+
+        if (left == p || left == q) {
+            return left;
+        }
+
+        if (right == p || right == q) {
+            return right;
+        }
+
+        return left != null ? left : right;
+    }
+
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
         if (root == null) {

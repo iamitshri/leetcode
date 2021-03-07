@@ -109,6 +109,46 @@ public class VerticalOrderTraversal {
         helper(map, node.left, colNum - 1, level + 1);
         helper(map, node.right, colNum + 1, level + 1);
     }
+
+    /**
+     * as of 3/6 Runtime: 3 ms, faster than 76.21% of Java online submissions for Vertical Order Traversal of a Binary
+     * Tree. Memory Usage: 39 MB, less than 89.69% of Java online submissions for Vertical Order Traversal of a Binary
+     * Tree.
+     *
+     * @param root
+     * @return
+     */
+    public List<List<Integer>> verticalTraversal2(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        Map<Integer, Map<Integer, List<Integer>>> map = new TreeMap<>(); // order by key
+        helper2(root, 0, 0, map);
+
+        for (int key : map.keySet()) {
+            List<Integer> colList = new ArrayList<>();
+            Map<Integer, List<Integer>> levelMap = map.get(key);
+            for (int level : levelMap.keySet()) {
+                List<Integer> lst = levelMap.get(level);
+                Collections.sort(lst);
+                colList.addAll(lst);
+            }
+            result.add(colList);
+        }
+        return result;
+    }
+
+    void helper2(TreeNode root, int row, int col, Map<Integer, Map<Integer, List<Integer>>> map) {
+        if (root == null) {
+            return;
+        }
+        map.putIfAbsent(col, new TreeMap<Integer, List<Integer>>());
+        map.get(col)
+           .putIfAbsent(row, new ArrayList<Integer>());
+        map.get(col)
+           .get(row)
+           .add(root.val);
+        helper2(root.left, row + 1, col - 1, map);
+        helper2(root.right, row + 1, col + 1, map);
+    }
 }
 
 
