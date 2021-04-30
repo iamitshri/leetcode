@@ -3,9 +3,9 @@ package com.practice.array;
 public class RemoveDuplicatesIInSortedArray {
 
     public static int removeDuplicates(int[] a) {
-		if (a == null || a.length == 0) {
-			return 0;
-		}
+        if (a == null || a.length == 0) {
+            return 0;
+        }
         int j = 0;
         // 1 2 3
         int cnt = 0;
@@ -30,6 +30,17 @@ public class RemoveDuplicatesIInSortedArray {
             }
         }
         return writePointer + 1;
+    }
+
+    public int removeDuplicates3(int[] nums) {
+
+        int j = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i - 1] != nums[i]) {
+                nums[j++] = nums[i];
+            }
+        }
+        return j;
     }
 
 
