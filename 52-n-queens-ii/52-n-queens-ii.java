@@ -17,7 +17,13 @@ class Solution {
     
     void helper(int row, int n){
         
+        if(row==n){
+            count++;return;
+        }
+            
+        
         for(int col=0; col < n;col++){
+            
             if(colSet.contains(col)){
                 continue;
             }     
@@ -28,10 +34,7 @@ class Solution {
             if(diag2.contains(row-col)){
                 continue;
             }
-            if(row==n-1){
-                count++;
-                
-            }else if(row < n){
+             
                 colSet.add(col);
                 diag1.add(row+col);
                 diag2.add(row-col);
@@ -41,7 +44,7 @@ class Solution {
                 colSet.remove(col);
                 diag1.remove(row+col);
                 diag2.remove(row-col);
-            }
+             
         }
     }
 }
