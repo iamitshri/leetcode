@@ -23,6 +23,7 @@ class Solution {
         if(p==null || q==null)
             return false;
         
+        // ArrayDeque does not allow null values
         ArrayDeque<TreeNode> ps = new ArrayDeque();
         ArrayDeque<TreeNode> qs = new ArrayDeque();
         ps.add(p);
