@@ -34,14 +34,16 @@ class Solution {
         
         if(head==null)
             return null;
-        System.out.println(" head val: "+head.val);
+        
         ListNode ll = middleNode(head);
-        System.out.println(" mid point "+ll.val);
+        
         // cutting the linked list
         if(ll!=null && ll==head){
             head.next=null;
             return new TreeNode(ll.val);
-        }else if(ll!=null){
+        }
+        
+        if(ll!=null){ // cut the linkedlist
             ListNode temp = head;
             while(temp!=null && temp.next!=ll){
                 temp=temp.next;
@@ -49,6 +51,7 @@ class Solution {
             if(temp!=null && temp.next==ll)
                 temp.next=null;
         }
+        
         TreeNode node=null;
         if(ll!=null){
             ListNode next = ll.next;
