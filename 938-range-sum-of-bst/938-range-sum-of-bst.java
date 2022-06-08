@@ -27,9 +27,13 @@ class Solution {
             return;
         
         if(root.val >= low && root.val <= high){
-            sum+= root.val;
+            sum += root.val;
         }
-        helper(root.left, low, high);
-        helper(root.right, low, high);
+        
+        if(root.val >= low)
+            helper(root.left, low, high);
+        
+        if(root.val<= high)
+            helper(root.right, low, high);
     }
 }
