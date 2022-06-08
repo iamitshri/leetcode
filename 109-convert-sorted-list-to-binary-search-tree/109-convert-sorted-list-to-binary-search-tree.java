@@ -43,14 +43,14 @@ class Solution {
             return new TreeNode(ll.val);
         }
         
-        if(ll!=null){ // cut the linkedlist
-            ListNode temp = head;
-            while(temp!=null && temp.next!=ll){
-                temp=temp.next;
-            }
-            if(temp!=null && temp.next==ll)
-                temp.next=null;
-        }
+        // if(ll!=null){ // cut the linkedlist
+        //     ListNode temp = head;
+        //     while(temp!=null && temp.next!=ll){
+        //         temp=temp.next;
+        //     }
+        //     if(temp!=null && temp.next==ll)
+        //         temp.next=null;
+        // }
         
         TreeNode node=null;
         if(ll!=null){
@@ -70,6 +70,7 @@ class Solution {
         if(head==null)
             return null;
         
+        ListNode prevPtr=null;
         ListNode f = head;
         ListNode l = head;
          // 1 2
@@ -77,10 +78,13 @@ class Solution {
             f = f.next;
             if(f!=null){
                 f=f.next;
+                prevPtr = l;
                 l = l.next;
             }
         }
         
+        if(prevPtr!=null)
+            prevPtr.next=null;
         
         return l;
     }
