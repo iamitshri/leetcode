@@ -10,10 +10,10 @@ class Solution {
             list.add(s);
             map.put(n,list);           
         }
-        List<List<String>> result = new ArrayList<>();
-        for(String s : map.keySet()){
-            result.add(map.get(s));
-        }
-        return result;
+        // List<List<String>> result = new ArrayList<>();
+        // for(String s : map.keySet()){
+        //     result.add(map.get(s));
+        // }
+        return new ArrayList(map.values());
     }
 }
