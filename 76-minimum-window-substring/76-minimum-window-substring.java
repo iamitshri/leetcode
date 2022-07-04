@@ -36,14 +36,14 @@ class Solution {
                     min = windowEnd-windowStart+1;
                     minS = windowStart;
                     minE = windowEnd;
-                    result = s.substring(minS,minE+1);
+                     
                 }
                 windowStart++;
             }
             
             
         }
-        return result;
+        return min < Integer.MAX_VALUE? s.substring(minS,minE+1) : "";
         
     }
 }
