@@ -22,7 +22,7 @@ class Solution {
          if(root==null || subRoot==null)
             return false;
         
-         return (root.val==subRoot.val && isSame(root,subRoot))
+         return  isSame(root,subRoot)
              || isSubtree(root.left,subRoot)
              || isSubtree(root.right,subRoot);
         
