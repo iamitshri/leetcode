@@ -19,7 +19,7 @@ class Solution {
                 return false;
             
             else
-                if (!stk.isEmpty())
+                
                     stk.pop();
             
         }
