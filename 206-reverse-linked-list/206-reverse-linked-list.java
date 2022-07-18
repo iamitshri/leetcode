@@ -10,6 +10,26 @@
  */
 class Solution {
     public ListNode reverseList(ListNode head) {
+       
+        // 3- 1 - 2 - null
+         
+        if(head==null)
+            return null;
+        
+        if(head.next==null)
+            return head;
+        
+        ListNode rev = reverseList(head.next);
+        
+        head.next.next=head;
+        head.next=null;
+        
+        return rev;
+        
+        
+    }
+    
+    public ListNode reverseList2(ListNode head) {
         
         ListNode temp=null;
         ListNode rev=null;
