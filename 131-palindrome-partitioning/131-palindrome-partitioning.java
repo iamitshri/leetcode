@@ -2,24 +2,24 @@ class Solution {
     
     List<List<String>> res = new ArrayList<>();
     public List<List<String>> partition(String s) {
-        helper(s,new ArrayList<>());
+        helper(s,new ArrayList<>(),0);
         return res;
     }
     
-    void helper(String s, List<String> list){
+    void helper(String s, List<String> list, int start){
         
-        if(s==null || s.length()==0){
+        if(start == s.length()){
             res.add(new ArrayList<>(list));
             return;
         }
         
-        for(int i=1 ; i <= s.length();i++){
+        for(int i=start ; i < s.length();i++){
             
-            String str = s.substring(0,i);
+            String str = s.substring(start,i+1);
             if(!isPalindrome(str)) continue;
             
             list.add(str);
-            helper(s.substring(i,s.length()), list);
+            helper(s, list,i+1);
             list.remove(list.size()-1);
         }
     }
