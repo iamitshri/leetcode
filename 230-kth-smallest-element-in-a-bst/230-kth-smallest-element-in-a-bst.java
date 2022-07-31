@@ -27,13 +27,13 @@ class Solution {
         
         if(root==null)
             return;
-        if(found)
+        if(k<1)
             return;
        
        
         helper(root.left);
          
-        if(k==1 && !found){
+        if(k==1 ){
             result = root.val;
             found=true;
         }
