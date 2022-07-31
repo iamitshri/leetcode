@@ -15,7 +15,6 @@
  */
 class Solution {
     int result = 0;
-    boolean found=false;
     int k=0;
     public int kthSmallest(TreeNode root, int k) {
         this.k=k;
