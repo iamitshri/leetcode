@@ -29,15 +29,10 @@ class Solution {
             return;
         if(k<1)
             return;
-       
-       
-        helper(root.left);
-         
+       helper(root.left);
         if(k==1 ){
             result = root.val;
-            found=true;
         }
-        
         k=k-1;
         helper(root.right);
     }
