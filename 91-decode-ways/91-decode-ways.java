@@ -1,6 +1,34 @@
 class Solution {
     public int numDecodings(String s) {
         
+      
+        
+        if(s.charAt(0)=='0')
+            return 0;
+        
+        int twoBack =1;
+        int oneBack= 1;
+        for(int i=1; i < s.length() ;i++){
+            int current=0;
+            if(s.charAt(i)!='0')
+               current = oneBack;
+            
+            int td = Integer.parseInt(s.substring(i-1,i+1));
+            if(td>=10 && td<=26){
+                current+=twoBack;
+            }
+            
+            twoBack = oneBack;
+            oneBack = current;
+        }
+            
+        return oneBack;
+      
+    }
+    
+    
+     public int interative(String s) {
+        
         int [] dp = new int[s.length()+1];
         
         if(s.charAt(0)=='0')
@@ -20,9 +48,8 @@ class Solution {
         }
             
         return dp[s.length()];
-     //  return recursiveWithMemo(0,s,dp);
+     
     }
-    
      
     
     
