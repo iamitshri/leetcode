@@ -5,18 +5,15 @@ class Solution {
         int n = s.length();
         boolean [] dp = new boolean[n+1];
         dp[0]=true;
-        for(int i=1;i <= n;i++){
-            if(!dp[i-1]) continue;
+        for(int i=0;i <= n;i++){
+            if(!dp[i]) continue;
              for(String w : wordDict){
-                int j = i-1 + w.length();
-                if(j<=n && w.equals(s.substring(i-1,j))){
+                int j = i + w.length();
+                if(j<=n && w.equals(s.substring(i,j))){
                     dp[j] = true;     
                  }
              }      
         }
-        
-
-        
         return dp[n];
     }
 }
