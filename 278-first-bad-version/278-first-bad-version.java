@@ -13,11 +13,11 @@ public class Solution extends VersionControl {
         }
         left= prev;
         right = runner;
-        while(left<right){
+        while(left<=right){
             int m = (right-left)/2+left; 
             
             if(isBadVersion(m)){
-                right = m ;
+                right = m-1;
             }else{
                 left = m + 1;
             }
