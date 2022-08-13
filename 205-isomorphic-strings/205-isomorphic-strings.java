@@ -31,7 +31,7 @@ class Solution {
                 return false;
         }
         
-        return new String(src).equals(new String(dest));
+        return true;
         
     }
 }
