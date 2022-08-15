@@ -27,7 +27,7 @@ class Unionfind{
          
     }
     
-    int find(int x){
+    int find2(int x){
         
         while(x!=parent[x]){
             parent[x] = parent[parent[x]];
@@ -37,10 +37,14 @@ class Unionfind{
         return parent[x];
     }
     
-     
+   public int find(int x) {
+        if (parent[x] != x) parent[x] = find(parent[x]);
+        return parent[x];
+    }
     
     public boolean union(int x, int y) {
         int xr = find(x), yr = find(y);
+        
         if (xr == yr) {
             return false;
         } else if (rank[xr] < rank[yr]) {
@@ -54,21 +58,6 @@ class Unionfind{
         return true;
     }
     
-    boolean union2(int x, int y){
-        
-        int px = find(x);
-        int py = find(y);
-        if(px==py)
-            return false;
-        else if(rank[px] >= rank[py]){
-            parent[y] = x;
-            rank[x] +=1;
-        }else{
-            parent[x]=y;
-            rank[y] += 1;
-        }
-        
-        return true;
-    }
+  
     
 }
