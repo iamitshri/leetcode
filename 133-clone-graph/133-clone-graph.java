@@ -20,8 +20,7 @@ class Node {
 
 class Solution {
     
-    Set<Node> visited = new HashSet<>();
-    Map<Node,Node> map = new HashMap<>();
+     Map<Node,Node> map = new HashMap<>();
     public Node cloneGraph(Node node) {
          return helper(node);
     }
@@ -32,16 +31,16 @@ class Solution {
         if(node == null)
             return null;
         
+        if(map.containsKey(node))
+            return map.get(node);
+        
         // create new node from the current 
         Node newNode = new Node(node.val);
         map.put(node,newNode);
-        visited.add(node);
+         
         //visit its neighbours
         for(Node n : node.neighbors){
-            if(!visited.contains(n)){
-                helper(n);
-            }
-            newNode.neighbors.add(map.get(n));
+           newNode.neighbors.add(helper(n));
         }
         
         return newNode;
