@@ -10,23 +10,21 @@
  */
 class Solution {
     public ListNode middleNode(ListNode head) {
-        // 1 2 3 4 5 
-        // 1 2
+        
         if(head==null)
-            return null;
+            return head;
         
-        ListNode f = head;
-        ListNode l = head;
-        
-        // 1 2
-        while(f!=null){
-            f = f.next;
-            if(f!=null){
-                f=f.next;
-                l = l.next;
+        ListNode fp = head;
+        ListNode sp = head;
+        // 1 2 3
+        while(fp!=null){
+            fp = fp.next;
+            if(fp!=null){
+                fp = fp.next;
+                sp = sp.next;
             }
         }
-        
-        return l;
+        // 1  1 2  1 2 3 
+        return sp;
     }
 }
