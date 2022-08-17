@@ -9,10 +9,9 @@ class Solution {
         for(int c : count){
             ans += (c/2)*2;
             
-             
+            if(ans%2==0 && c%2==1)
+                ans+=1;
         }
-        
-        return Math.min(1+ans,s.length());
-         
+        return ans;
     }
 }
