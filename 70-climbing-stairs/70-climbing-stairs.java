@@ -2,7 +2,21 @@ class Solution {
     
     Map<Integer,Integer> map = new HashMap<>();
     
-    public int climbStairs(int n) {
+        public int climbStairs(int n) {
+        
+       
+        int oneBack = 1;
+        int twoBack =1;
+        for(int i=1;i< n;i++){
+            
+            int t = oneBack+ twoBack;
+            twoBack = oneBack;
+            oneBack = t;
+        }
+        return oneBack;
+    }
+    
+    public int climbStairs3(int n) {
         
         int [] ways = new int[n+1];
         ways[0]=1;
